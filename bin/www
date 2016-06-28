@@ -5,11 +5,11 @@
  */
 
 var app = require('../app');
+var logger = require('../public/javascripts/logger.js')
 var debug = require('debug')('untitled:server');
 var http = require('http');
 var https = require('https');
 var fs = require('fs');
-
 /**
  * Get port from environment and store in Express.
  */
@@ -20,7 +20,7 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-console.log("Starting Server")
+logger.info("Starting Server")
 var server = http.createServer(app);
 
 /**
@@ -31,6 +31,7 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 console.log("Server Listening on port 3000");
+logger.info("Server Listening on port 3000");
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -39,6 +40,7 @@ var pk = fs.readFileSync('bin/certificates/pk.key');
 var cert = fs.readFileSync('bin/certificates/cert.cert');
 https.createServer({key: pk, cert: cert }, app).listen(9000);
 console.log("SSL Server started on port 9000");
+logger.info("SSL Server started on port 9000");
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
