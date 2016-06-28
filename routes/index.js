@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     log(JSON.stringify(req.headers, null, 4));
 
       res.render('index', {
-        title: 'Nodejs Echo Server',
+        title: 'node Echo Server',
         queryParams: "\n"+JSON.stringify(getQueryParams(req), null, 4),
         request: req.protocol + '://' + req.get('host') + req.originalUrl,
         headers: "\n"+JSON.stringify(req.headers, null, 4)
@@ -26,7 +26,7 @@ router.post('/', function(req, res, next) {
     log(JSON.stringify(req.body, null, 4));
 
     res.render('index', {
-        title: 'Nodejs Echo Server',
+        title: 'node Echo Server',
         queryParams: "\n"+JSON.stringify(getQueryParams(req), null, 4),
         request: req.protocol + '://' + req.get('host') + req.originalUrl,
         headers: "\n"+JSON.stringify(req.headers, null, 4),
