@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1= title
+    p Request URI: #{request}
     p(style="white-space: pre-wrap;") Query Parameters #{queryParams}
-    p Request: #{request}
     div(style="white-space: pre-wrap;") Headers: #{headers}
     div(style="white-space: pre-wrap;") Body: #{body}

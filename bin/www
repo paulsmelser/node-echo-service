@@ -37,8 +37,8 @@ console.log("Server Listening on port 3000");
 
 var pk = fs.readFileSync('bin/certificates/pk.key');
 var cert = fs.readFileSync('bin/certificates/cert.cert');
-https.createServer({key: pk, cert: cert }, app).listen(9999);
-console.log("SSL Server started on port 9999");
+https.createServer({key: pk, cert: cert }, app).listen(9000);
+console.log("SSL Server started on port 9000");
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
